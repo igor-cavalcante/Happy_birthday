@@ -240,7 +240,7 @@ Letter.prototype.step = function () {
     }
   }  else if (this.phase === "balloon") {
   // Dentro da função Letter.prototype.step, na fase "balloon"
-    var balloonFlyTime = 300; // Duração que os balões ficarão voando
+    var balloonFlyTime = 200; // Duração que os balões ficarão voando
     var balloonFlyCounter = 0; // Contador de tempo para os balões voarem
 
       ctx.strokeStyle = this.lightColor.replace("light", 80);
@@ -305,65 +305,7 @@ Letter.prototype.step = function () {
           }
       }
   }
-  
-  // else if (this.phase === "balloon") {
-  //   ctx.strokeStyle = this.lightColor.replace("light", 80);
 
-  //   if (this.spawning) {
-  //     ++this.tick;
-  //     ctx.fillStyle = this.lightColor.replace("light", 70);
-  //     ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
-
-  //     if (this.tick >= this.spawnTime) {
-  //       this.tick = 0;
-  //       this.spawning = false;
-  //       this.inflating = true;
-  //     }
-  //   } else if (this.inflating) {
-  //     ++this.tick;
-
-  //     var proportion = this.tick / this.inflateTime,
-  //       x = (this.cx = this.x),
-  //       y = (this.cy = this.y - this.size * proportion);
-
-  //     ctx.fillStyle = this.alphaColor.replace("alp", proportion);
-  //     ctx.beginPath();
-  //     generateBalloonPath(x, y, this.size * proportion);
-  //     ctx.fill();
-
-  //     ctx.beginPath();
-  //     ctx.moveTo(x, y);
-  //     ctx.lineTo(x, this.y);
-  //     ctx.stroke();
-
-  //     ctx.fillStyle = this.lightColor.replace("light", 70);
-  //     ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
-
-  //     if (this.tick >= this.inflateTime) {
-  //       this.tick = 0;
-  //       this.inflating = false;
-  //     }
-  //   } else {
-  //     this.cx += this.vx;
-  //     this.cy += this.vy += opts.upFlow;
-
-  //     ctx.fillStyle = this.color;
-  //     ctx.beginPath();
-  //     generateBalloonPath(this.cx, this.cy, this.size);
-  //     ctx.fill();
-
-  //     ctx.beginPath();
-  //     ctx.moveTo(this.cx, this.cy);
-  //     ctx.lineTo(this.cx, this.cy + this.size);
-  //     ctx.stroke();
-
-  //     ctx.fillStyle = this.lightColor.replace("light", 70);
-  //     ctx.fillText(this.char, this.cx + this.dx, this.cy + this.dy + this.size);
-
-  //     if (this.cy + this.size < -hh || this.cx < -hw || this.cy > hw)
-  //       this.phase = "done";
-  //   }
-  // }
 };
 function Shard(x, y, vx, vy, color) {
   var vel =
